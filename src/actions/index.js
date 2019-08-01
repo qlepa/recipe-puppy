@@ -1,10 +1,7 @@
-import recipePuppy from '../apis/recipePuppy';
+import recipePuppy from "../apis/recipePuppy";
 
-export const fetchRecipes = async () => {
-    const response = await recipePuppy.get('/api')
-    
-    return {
-        type: 'FETCH_RECIPES',
-        payload: response,
-    };
+export const fetchRecipes = () => async dispatch => {
+  const response = await recipePuppy.get("/api");
+
+  dispatch({ type: "FETCH_RECIPES", payload: response });
 };

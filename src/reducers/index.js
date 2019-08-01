@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
+import recipesReducer from './recipesReducer';
 
 export default combineReducers({
-    replaceMe: () => 10
+    recipesReducer: () => 10
 });
