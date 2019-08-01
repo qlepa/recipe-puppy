@@ -1,10 +1,10 @@
 import React from 'react';
 
-import RecipeList from './RecipeList';
+import RecipesList from './RecipesList';
 
 const App = () => {
     return (
-        <RecipeList />
+        <RecipesList />
         );
 };
 
