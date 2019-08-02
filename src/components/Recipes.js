@@ -1,30 +1,33 @@
-import React from 'react';
+import React from "react";
 import { connect } from "react-redux";
 
 class Recipes extends React.Component {
   state = {
-    recipesToDisplay: [],
+    recipesToDisplay: []
+  };
+  componentDidUpdate(prevProps) {
+    console.log(this.props.recipes[0].ingredients.split(', '));
+    if (prevProps.userIngredients !== this.props.userIngredients) {
+      this.setState({
+        recipesToDisplay: this.props.recipes.filter(recipe => {
+          return recipe.ingredients.split(', ').some(r => this.props.userIngredients.indexOf(r) >= 0);
+        })
+      });
+    }
   }
-  componentDidMount() {
-    console.log('props nie działa :(', this.props.recipes)
-    console.log('inne działają')
-    this.setState({
-      recipesToDisplay: this.props.userIngredients
-    })
-  }
-  
+
   render() {
     const { userIngredients, recipes } = this.props;
-    console.log(recipes)
-    console.log(this.state.recipesToDisplay)
+    console.log(this.state.recipesToDisplay);
+    
     return <div>HELLLLLO</div>;
   }
-};
+}
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     recipes: state.recipes
   };
 };
 
-export default connect(mapStateToProps) (Recipes);
+export default connect(mapStateToProps)(Recipes);
