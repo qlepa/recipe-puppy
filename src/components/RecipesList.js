@@ -3,11 +3,11 @@ import { connect } from "react-redux";
 import { fetchRecipes } from "../actions";
 import ReactMultiSelectCheckboxes from "react-multiselect-checkboxes";
 
-import Recipe from "./Recipe";
+import Recipes from "./Recipes";
 
 class RecipesList extends React.Component {
   state = {
-    userIngredients: {},
+    userIngredients: [],
   }
 
   componentDidMount() {
@@ -18,11 +18,12 @@ class RecipesList extends React.Component {
     return self.indexOf(value) === index;
   };
 
-  onInputChange = (e) => {
-    const user = e.value
-    console.log(user)
+  onInputChange = (value) => {
+    this.setState({
+      userIngredients: value.map(ingredient => ingredient.label)
+    })
   }
-
+  
   render() {
     const { recipes } = this.props;
     const ingredients = recipes
@@ -37,14 +38,16 @@ class RecipesList extends React.Component {
       .map((item, index) => {
         return { label: item, value: index };
       });
-    console.log(this.state.userIngredients)
+    // console.log(this.state.userIngredients);
+
     return (
       <Fragment>
         <ReactMultiSelectCheckboxes
           options={options}
-          getDropdownButtonLabel={(e) => this.onInputChange(e)}
+          placeholderButtonLabel="Select ingredients..."
+          onChange={this.onInputChange}
         />
-        <Recipe />
+        <Recipes userIngredients={this.state.userIngredients} />
       </Fragment>
     );
   }
