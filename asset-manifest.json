@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/recipe-puppy/static/js/main.465a18c2.chunk.js",
+    "main.js.map": "/recipe-puppy/static/js/main.465a18c2.chunk.js.map",
+    "runtime~main.js": "/recipe-puppy/static/js/runtime~main.ea77c55d.js",
+    "runtime~main.js.map": "/recipe-puppy/static/js/runtime~main.ea77c55d.js.map",
+    "static/js/2.c7accca9.chunk.js": "/recipe-puppy/static/js/2.c7accca9.chunk.js",
+    "static/js/2.c7accca9.chunk.js.map": "/recipe-puppy/static/js/2.c7accca9.chunk.js.map",
+    "index.html": "/recipe-puppy/index.html",
+    "precache-manifest.426e497464509e5878c222ef6e8c2cda.js": "/recipe-puppy/precache-manifest.426e497464509e5878c222ef6e8c2cda.js",
+    "service-worker.js": "/recipe-puppy/service-worker.js"
+  }
+}
