@@ -10,13 +10,15 @@ export default function Recipe(props) {
             <img
               className="ui right floated middle aligned rounded image"
               src={recipe.thumbnail}
-              alt="recipe"
+              alt={`recipe ${recipe.title}`}
             />
-            <p>`ingredients ${recipe.ingredients}`</p>
-            <a href={recipe.href}>Check full recipe</a>
+            <p>{`Ingredients: ${recipe.ingredients}`}</p>
+            <a href={recipe.href} target="_blank" rel="noopener noreferrer">
+              Check full recipe
+            </a>
           </div>
         </div>
       </div>
     );
   });
-};
+}
